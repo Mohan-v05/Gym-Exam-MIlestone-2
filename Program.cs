@@ -11,27 +11,48 @@ namespace FitnessProgramManagementSystem_
             FitnessProgram fitnessProgram = new FitnessProgram(1, "weightLifting", "3months", 1000);
             FitnessProgramManager fitnessProgramManager= new FitnessProgramManager();
             Console.WriteLine(fitnessProgram.ToString());
-           
 
-            Console.WriteLine("1. Add a FitnessProgram\r\n2. View All FitnessPrograms\r\n3. Update a FitnessProgram\r\n4. Delete a FitnessProgram\r\n5. Exit\r\nChoose an option:");
+
+
+
+            bool exit = false;
+            while (!exit)
+            {
+                Console.WriteLine("\n----- Fitness Program Management Menu -----");
+                Console.Write("1. Add a FitnessProgram\r\n2. View All FitnessPrograms\r\n3. Update a FitnessProgram\r\n4. Delete a FitnessProgram\r\n5. Exit\r\nChoose an option:");
+                  
 
                 var input = Console.ReadLine();
-            while (input!="5")
-            {
-                if (input == "1")
+                switch (input)
                 {
-                    fitnessProgramManager.CreateFitnessProgram();
+                    case "1":
+                        Console.Clear();
+                        fitnessProgramManager.CreateFitnessProgram();
+                        
+                        break;
+                    case "2":
+                        Console.Clear();
+                        fitnessProgramManager.ReadFitnessPrograms();
+                        break;
+                    case "3":
+                        Console.Clear();
+                        fitnessProgramManager.UpdateFitnessProgram();
+                        break;
+                    case "4":
+                        Console.Clear();
+                        fitnessProgramManager.DeleteFitnessProgram();
+                        break;
+                    case "5":
+
+                        exit = true;
+                        Console.WriteLine("Exiting the program...");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice! Please select a valid option.");
+                        break;
                 }
-                else if (input == "2")
-                {
-                    fitnessProgramManager.ReadFitnessPrograms();
-                }
-                else
-                {
-                    Console.WriteLine("Not Available Function");
-                }
-                 input = Console.ReadLine();
             }
         }
     }
 }
+    

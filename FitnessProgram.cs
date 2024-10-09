@@ -23,8 +23,11 @@ namespace FitnessProgramManagementSystem_
             this.Duration = duration;
             this.Price = price;
         }
-        public override string ToString() {
+        public override string ToString() 
+        {
             return $"ID: {fitnessProgramId}, Title: {Title}, Duration: {Duration}, Price: {Price}\r\n";
-                }
+        }
+
+
     }
 }
