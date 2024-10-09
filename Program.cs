@@ -4,9 +4,12 @@ namespace FitnessProgramManagementSystem_
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
-            var connectionString = "Data Source=MyDatabase.db";
+          
+
+        
 
             FitnessProgram fitnessProgram = new FitnessProgram(1, "weightLifting", "3months", 1000);
             FitnessProgramManager fitnessProgramManager= new FitnessProgramManager();
@@ -28,7 +31,7 @@ namespace FitnessProgramManagementSystem_
                     case "1":
                         Console.Clear();
                         fitnessProgramManager.CreateFitnessProgram();
-                        
+
                         break;
                     case "2":
                         Console.Clear();
